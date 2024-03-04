@@ -14,7 +14,7 @@ function createWindow() {
 
   mainWindow.webContents.openDevTools();
 
-  ElectronBlocker.fromPrebuiltAdsOnly(fetch).then((blocker) => {
+  ElectronBlocker.fromPrebuiltAdsAndTracking(fetch).then((blocker) => {
     blocker.enableBlockingInSession(mainWindow.webContents.session);
   });
 }
